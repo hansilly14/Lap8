@@ -1,0 +1,44 @@
+
+public class SanPham {
+	    public String ten;
+	    public double gia;
+	    public double giamGia;
+	    
+	    public SanPham(String ten, double gia, double giamGia) {
+	        this.ten = ten;
+	        this.gia = gia;
+	        this.giamGia = giamGia;
+	    }
+	    
+	    public double tinhThueNhapKhau() {
+	        return gia * 0.1;
+	    }
+	    
+	    public void xuatThongTin() {
+	        System.out.println("Tên sản phẩm: " + ten);
+	        System.out.println("Đơn giá: " + gia);
+	        System.out.println("Giảm giá: " + giamGia);
+	        System.out.println("Thuế nhập khẩu: " + tinhThueNhapKhau());
+	    }
+	}
+
+	import java.util.Scanner;
+	public class Main {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);
+
+	        System.out.print("Nhập tên sản phẩm: ");
+	        String tenSanPham = scanner.nextLine();
+
+	        System.out.print("Nhập giá sản phẩm: ");
+	        double giaSanPham = scanner.nextDouble();
+
+	        System.out.print("Nhập giảm giá (dưới dạng phần trăm): ");
+	        double giamGia = scanner.nextDouble() / 100;
+
+	        SanPham sp = new SanPham(tenSanPham, giaSanPham, giamGia);
+	        sp.xuatThongTin();
+	    }
+	}
+
+
