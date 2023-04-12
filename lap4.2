@@ -1,0 +1,56 @@
+import java.util.Scanner;
+public class SanPham {
+	    public String ten;
+	    public double gia;
+	    public double giamGia;
+	    public SanPham() {
+	        this.ten=ten;
+	        this.gia = gia;
+	        this.giamGia = giamGia;
+	    }
+
+	    public SanPham(String ten, double gia, double giamGia) {
+	        this.ten = ten;
+	        this.gia = gia;
+	        this.giamGia = giamGia;
+	    }
+
+	    public void nhap() {
+	    	Scanner sc= new Scanner(System.in);
+	        System.out.print("Nhập tên sản phẩm: ");
+	        ten = sc.nextLine();
+	        System.out.print("Nhập giá sản phẩm: ");
+	        gia = sc.nextDouble();
+	        System.out.print("Nhập giảm giá (dưới dạng phần trăm): ");
+	        giamGia = sc.nextDouble() / 100;
+	    }
+
+	    public void xuat() {
+	        System.out.println("Tên sản phẩm: " + ten);
+	        System.out.println("Đơn giá: " + gia);
+	        System.out.println("Giảm giá: " + (giamGia * 100) + "%");
+	        System.out.println("Thuế nhập khẩu: " + tinhThueNhapKhau());
+	        System.out.println();
+	    }
+
+	    private double tinhThueNhapKhau() {
+	        return gia * 0.1;
+	    }
+	}
+
+	import java.util.Scanner;
+	public class Main {
+	    public static void main(String[] args) {
+	        Scanner scanner = new Scanner(System.in);	   
+	        SanPham sp1 = new SanPham();
+	        System.out.println("Nhập thông tin sản phẩm thứ nhất:");
+	        sp1.nhap();
+	        sp1.xuat();
+	        SanPham sp2 = new SanPham();
+	        System.out.println("Nhập thông tin sản phẩm thứ hai:");
+	        sp2.nhap();
+	        sp2.xuat();
+	    }
+	}
+
+
